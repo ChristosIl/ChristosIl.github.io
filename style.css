@@ -142,7 +142,7 @@ section p{
 }
 
 /* Mobile-friendly tweaks */
-@media (max-width: 700px) {
+@media (max-width: 400px) {
   body { padding: 0.75em; }
 
   nav { margin: 0.5em auto 2em auto; }
