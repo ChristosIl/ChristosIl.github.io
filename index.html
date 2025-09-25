@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li><h3>Christos Iliakopoulos</h3></li>
+                <li><a href="#About-me">About Me</a></li>
+                <li><a href="/Files/Christos.pdf" download="Christos.pdf">CV</a></li>
+                <li><a href="#socials">Find Me On</a></li> 
+            </ul>
+        </nav>
+        <div class="flex-container">
+            <img height="400px" width="300px" src="/images/portrait.jpg">
+            <div class="text-container">
+                <h1 id="typing"></h1>
+                <p id="intro" class="fade-in">Hi, I’m Christos, an undergraduate student at NTUA’s School of Electrical and Computer Engineering (ECE). I’m passionate about computer networks and how Artificial Intelligence is shaping the future of networking.</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="About-me" class="fade-in">
+        <h2>About Me</h2>
+        <p>I was born on February 4, 2001, in Alexandroupolis, and for the past ten years I have been living in Athens. From a young age, I have been fascinated by technology and developed a strong passion for computers and the sciences. In 2019, I was admitted through the national university entrance exams to the School of Electrical and Computer Engineering (ECE) at the National Technical University of Athens.
+
+Outside of academics, volleyball has been a big part of my life since childhood, and in recent years I have competed at a semi-professional level. I also enjoy sports in general, traveling, and reading crime novels, which allow me to balance my technical interests with creative and personal pursuits.</p>
+    </section>
+
+    <br>
+
+    <section id="socials" class="fade-in">
+        <h2>Find me on</h2>
+        <footer class="footer">
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/christos-iliakopoulos-41865520b/" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/ChristosIl" target="_blank">
+                <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://discordapp.com/users/187107447121510400" target="_blank">
+                <i class="fab fa-discord fa-2x"></i>
+                </a>
+            </div>
+            <div class="contact">
+                <a href="mailto:chrisiliak1000@gmail.com">email: chrisiliak1000@gmail.com</a>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script>
+        //TYPING EFFECT
+        var i = 0;
+        var txt = 'Hey there!';
+        var speed = 75;
+
+        function typeWriter(callback) {
+            if (i < txt.length) {
+            document.getElementById("typing").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(() => typeWriter(callback), speed);
+            } else {
+            if (callback) callback(); 
+            }
+        }
+        
+  
+        //scroll-triggered animation
+        document.addEventListener("DOMContentLoaded", function () {
+            typeWriter(() => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+            });
+        });
+    </script>
+
+</body>
+</html>
