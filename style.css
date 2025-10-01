@@ -10,6 +10,7 @@
     --color-3:#333;
     --color-4: blue;
     --switch:#f5c18c;
+    --footer:white;
 }
 
 /*Dark theme*/
@@ -23,6 +24,7 @@
     --color-3:#646464;
     --color-4: blue;
     --switch:black;
+    --footer: black;
 }
 
 * {
@@ -111,7 +113,7 @@ h1 {
 
 section {
     padding: 3em min(2em, 15%);
-    background-color: var(--color-2);
+    background-color: var(--footer);
 }
 
 h2 {
@@ -130,7 +132,7 @@ section p{
     justify-content: space-between; 
     align-items: center;
     padding: 20px;
-    background-color: var(--base-color);
+    background-color: var(--footer);
 }
 
 .footer .socials a {
@@ -156,6 +158,7 @@ section p{
 .fade-in {
     opacity: 0;
     transition: opacity 2s ease-in;
+    
 }
 
 .fade-in.show {
